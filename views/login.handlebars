@@ -1,0 +1,36 @@
+<div class="row justify-content-between-md custom-login-container">
+
+  <!-- Stylish Card component for the login form -->
+  <div class="login-card custom-login-card">
+
+    <!-- Custom Page title for the login section -->
+    <h2 class="page-title input-field col-md-6 custom-login-title">Login</h2>
+
+    <!-- Login form starts here -->
+    <form class="form login-form custom-login-form">
+      
+      <!-- Custom Username input field section -->
+      <div class="form-group input-field col-md-8 custom-input-field">
+        <label for="loginUsername">Enter Username:</label>
+        <br>
+        <input class="form-input" type="text" id="loginUsername">
+      </div>
+      <!-- Custom Password input field section -->
+      <div class="form-group input-field col-md-8 custom-input-field">
+        <label for="pwlogin">Enter Password:</label>
+        <br>
+        <input class="form-input" type="password" id="pwlogin">
+      </div>
+      <!-- Custom Login button and link to signup page section -->
+      <div class="form-group input-field col-md-6 custom-input-field">
+        <button class="btn btn-primary yellow loginbtn custom-login-button" type="button">Login</button>
+        <br>
+        <a href="/signup" class="custom-signup-link">Signup Instead</a>
+      </div>
+    </form>
+  </div>
+  <br>
+</div>
+
+<!-- Including the Custom JavaScript file for handling login form submission and validation -->
+<script src="/js/login.js"></script>

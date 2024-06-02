@@ -6,8 +6,6 @@ AS A developer who writes about tech
 I WANT a CMS-style blog site
 SO THAT I can publish articles, blog posts, and my thoughts and opinions
 
-
-
 ## Acceptance Criteria
 
 GIVEN a CMS-style blog site
@@ -44,3 +42,16 @@ THEN I am signed out of the site
 WHEN I am idle on the site for more than a set time
 THEN I am able to view posts and comments but I am prompted to log in again before I can add, update, or delete posts
 
+##  Screenshot
+![Site Screenshot](./public/images/SignIn.PNG)
+![Site Screenshot](./public/images/AddNote.PNG)
+![Site Screenshot](./public/images/CreateNew.PNG)
+![Site Screenshot](./public/images/CreateNote.PNG)
+
+  ## License
+This software is covered under the following license:
+MIT No Attribution License <br>
+[View license](https://opensource.org/license/mit-0/)
+
+# Questions
+[Jaystarz360 - Joshua Cherry](https://github.com/Jaystarz360)

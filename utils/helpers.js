@@ -6,6 +6,7 @@ module.exports = {
 
   // Format the date to display month, day, and year
   format_date: (date) => {
+    
     // Extract month, day, and year from the date object
     const month = new Date(date).getMonth() + 1;
     const day = new Date(date).getDate();

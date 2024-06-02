@@ -1,0 +1,58 @@
+/* Global styles for all pages */
+body {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  font-family: Arial, sans-serif; /* Choose a suitable font */
+  background-image: url('/path/to/your/image.jpg'); /* Background image */
+  background-size: cover; /* Cover the entire background */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Do not repeat the background image */
+}
+
+/* Header styles */
+header {
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background color */
+  color: white; /* Text color */
+  padding: 20px; /* Padding around header content */
+  text-align: center; /* Center-align header content */
+}
+
+/* Navigation styles */
+nav {
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background color */
+  padding: 10px; /* Padding around navigation links */
+}
+
+nav a {
+  color: black; /* Link color */
+  text-decoration: none; /* Remove default underline */
+  margin-right: 20px; /* Add space between navigation links */
+}
+
+/* Main content area styles */
+main {
+  padding: 20px; /* Add padding around main content */
+}
+
+/* Card styles */
+.card {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background color */
+  padding: 20px; /* Padding inside card */
+  margin-bottom: 20px; /* Add space between cards */
+}
+
+.card h2 {
+  color: #333; /* Heading color */
+}
+
+.card p {
+  color: #666; /* Paragraph text color */
+}
+
+/* Footer styles */
+footer {
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background color */
+  color: white; /* Text color */
+  padding: 20px; /* Padding around footer content */
+  text-align: center; /* Center-align footer content */
+}

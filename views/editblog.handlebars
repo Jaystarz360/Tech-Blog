@@ -1,0 +1,20 @@
+{{#if loggedIn}}
+  <div id="blogcard">
+    <h2>Edit or Delete</h2>
+    <div>
+      <input type="text" id="blogid" name="blogid" value="{{mapBlog.id}}" hidden />
+      <h3>Title:</h3>
+      <input type="text" id="editbpt" value="{{mapBlog.blogTitle}}" />
+    </div>
+    <div>
+      <h3>Content</h3>
+      <textarea id="editbp" name="editbp">{{mapBlog.blogBody}}</textarea>
+      <br />
+      <button id="submit">Submit</button>
+      <button id="delete">Delete</button>
+    </div>
+  </div>
+  <script src="/js/editblog.js"></script>
+{{else}}
+  <p>Please log in first</p>
+{{/if}}

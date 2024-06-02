@@ -1,53 +1,50 @@
-// Importing necessary dependencies
-const path = require('path');
-const express = require('express');
-const exphbs = require('express-handlebars');
-const session = require('express-session');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
-const routes = require('./controllers');
-const helpers = require('./utils/helpers');
+// Import necessary modules and configure the application
+require("dotenv").config();
+const path = require("path");
+const express = require("express");
+const session = require("express-session");
+const exphbs = require("express-handlebars");
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
+const sequelize = require("./config/connection");
+const routes = require("./controllers");
+const helpers = require("./utils/helpers");
 
-const sequelize = require('./config/connection');
-require('dotenv').config();
-
-// Initializing the Express application
+// Initialize the Express application
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Configuring session settings
+// Configure session settings
 const sess = {
-  secret: process.env.DB_SESS,
-  resave: false,
-  saveUninitialized: false,
+  secret: process.env.SESS_PASS,
   cookie: {
-    // Stored in milliseconds
-    maxAge: 24 * 60 * 60 * 1000, // expires after 1 day
+    maxAge: 24 * 60 * 60 * 1000, // 24 hours
   },
+  resave: false,
+  saveUninitialized: true,
   store: new SequelizeStore({
-    db: sequelize,
+    db: sequelize, // Sequelize instance
   }),
 };
 
-// Applying session middleware
+// Use session middleware
 app.use(session(sess));
 
-// Setting up Handlebars.js as the template engine
+// Configure Handlebars
 const hbs = exphbs.create({ helpers });
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
 
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
-
-// Middleware for parsing JSON and urlencoded data
+// Middleware for parsing JSON and URL-encoded bodies
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Middleware to serve static files from the "public" directory
-app.use(express.static(path.join(__dirname, 'public')));
+// Serve static files from the "public" directory
+app.use(express.static(path.join(__dirname, "public")));
 
-// Middleware to handle routing
+// Use routes defined in the controllers
 app.use(routes);
 
-// Sync Sequelize models to the database, then start the server
+// Sync Sequelize models with the database and start the server
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log(`App listening on port ${PORT}!`));
+  app.listen(PORT, () => console.log(`Now listening on http://localhost:${PORT}`));
 });

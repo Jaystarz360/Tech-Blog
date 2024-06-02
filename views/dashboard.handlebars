@@ -1,32 +1,12 @@
-<div class="custom-dashboard-container">
+<div>
+  <div>
+    <h2>User Dashboard</h2>
+    <nav>
+      <a href="dash/newblog">Create New Blog Post</a>
+    </nav>
 
-    <!-- Card panel for creating new posts -->
-    <div class="card-panel custom-card-panel brown darken-4">
-        <h2>
-            <a class="white-text" href="/post">+ Create New Post</a>
-        </h2>
-    </div>
-
-    {{#if posts.length}}
-    <!-- Post List Section -->
-    <div class="col-md-6 post-list custom-post-list">
-        <h2 class="center-align custom-post-list-title">Your Posts:</h2>
-
-        {{#each posts as |post|}}
-        <!-- Individual Post Section -->
-        <div class="collection custom-post-collection">
-            <h3>
-                <a href="/post/{{post.id}}"
-                    class="collection-item custom-collection-item brown darken-4 white-text">{{post.postTitle}}</a>
-            </h3>
-        </div>
-        <!-- Remove Button Section -->
-        <div class="col-md-4 custom-remove-button">
-            <button class="btn btn-sm custom-remove-btn brown btn-danger" data-id="{{post.id}}">Remove</button>
-        </div>
-        {{/each}}
-    </div>
-    {{/if}}
+    {{#each blogbatch as |blog|}}
+      {{> blogs}}
+    {{/each}}
+  </div>
 </div>
-
-<script src="/js/dashboard.js"></script>

@@ -1,0 +1,7 @@
+{{#each blogbatch as |blog|}}
+  <section class="card">
+    <a href="/blog/{{blog.id}}">{{blog.blogTitle}}</a>
+    <p>{{blog.blogBody}}</p>
+    <p>Blogged by {{blog.user.username}} on {{format_date blog.createdAt}} at {{format_time blog.createdAt}}.</p>
+  </section>
+{{/each}}

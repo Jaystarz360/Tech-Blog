@@ -44,19 +44,3 @@ THEN I am signed out of the site
 WHEN I am idle on the site for more than a set time
 THEN I am able to view posts and comments but I am prompted to log in again before I can add, update, or delete posts
 
-
-## Description
-
-
-
-## Tests
-Test case seen in the following walkthrough: <br>
-[Video Walkthrough]()
-
-## License
-This software is covered under the following license:
-MIT No Attribution License <br>
-[View license](https://opensource.org/license/mit-0/)
-
-# Questions
-[Jaystarz360 - Joshua Cherry](https://github.com/Jaystarz360)

@@ -1,33 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech-Blog</title>
-    <link rel="stylesheet" href="/css/styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jaystarz Tech Blog</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(151, 191, 212, 0.8);
+    }
+    nav {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 10px 20px;
+      color: #fff;
+    }
+    nav a {
+      color: #59c0ed;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+    nav a:last-child {
+      margin-right: 0;
+    }
+    main {
+      padding: 20px;
+      background-color: rgba(129, 216, 226, 0.8);
+      margin: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    main div {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    #logout {
+      cursor: pointer;
+    }
+  </style>
 </head>
 
-<body class="flex-column min-100-vh">
-    <header class="hero">
-        <h1 class="app-title"><a href="/">Jcherry's Tech Blog</a></h1>
-        <nav class="navbar">
-        <ul>
-            <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
-            <li class="li-inline nav-item"><a href="/login">Login</a></li>
-            <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
-        </ul>
-    </nav>
-    </header>
-    
-    <main class="col-auto">
-        {{{body}}}
-    </main>
+<body style="background-image: url('/path/to/your/image.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+  <!-- Header -->
+  <header>
+    <h1>Jaystarz Tech Blog</h1>
+  </header>
 
-    <footer class="flex-row justify-center">
-        &copy;<script>document.write(new Date().getFullYear());</script> Joshua Cherry
-    </footer>
+  <!-- Navigation -->
+  <nav>
+    <a href="/">Home</a>
+    <a href="/dash">Dashboard</a>
+    {{#if loggedIn}}
+      <a id="logout">Logout</a>
+    {{else}}
+      <a href="/login">Login</a>
+      <span>{{user.username}}</span>
+    {{/if}}
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <div>
+      {{{body}}}
+    </div>
+  </main>
+
+  <!-- Logout Script -->
+  {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
-
 </html>
-<script src="/js/logout.js"></script>

@@ -1,36 +1,50 @@
-<div class="row justify-content-between-md custom-login-container">
-
-  <!-- Stylish Card component for the login form -->
-  <div class="login-card custom-login-card">
-
-    <!-- Custom Page title for the login section -->
-    <h2 class="page-title input-field col-md-6 custom-login-title">Login</h2>
-
-    <!-- Login form starts here -->
-    <form class="form login-form custom-login-form">
-      
-      <!-- Custom Username input field section -->
-      <div class="form-group input-field col-md-8 custom-input-field">
-        <label for="loginUsername">Enter Username:</label>
-        <br>
-        <input class="form-input" type="text" id="loginUsername">
+<div class="row justify-space-between-md">
+  <!-- Login Section -->
+  <div style="flex: 0 1 calc(50% - 10px); margin-bottom: 20px; padding: 20px; border-radius: 10px; background-color: #fff; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);">
+    <h2>Login</h2>
+    <form class="form login-form">
+      <!-- Email Input -->
+      <div class="form-group">
+        <label for="email-login">Email:</label>
+        <input class="form-input" type="text" id="email-login" />
       </div>
-      <!-- Custom Password input field section -->
-      <div class="form-group input-field col-md-8 custom-input-field">
-        <label for="pwlogin">Enter Password:</label>
-        <br>
-        <input class="form-input" type="password" id="pwlogin">
+      <!-- Password Input -->
+      <div class="form-group">
+        <label for="password-login">Password:</label>
+        <input class="form-input" type="password" id="password-login" />
       </div>
-      <!-- Custom Login button and link to signup page section -->
-      <div class="form-group input-field col-md-6 custom-input-field">
-        <button class="btn btn-primary yellow loginbtn custom-login-button" type="button">Login</button>
-        <br>
-        <a href="/signup" class="custom-signup-link">Signup Instead</a>
+      <!-- Login Button -->
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit" style="padding: 12px 24px; border: none; border-radius: 5px; cursor: pointer; background-color: #000; color: #fff;">Log In</button>
       </div>
     </form>
   </div>
-  <br>
+  <!-- Signup Section -->
+  <div style="flex: 0 1 calc(50% - 10px); margin-bottom: 20px; padding: 20px; border-radius: 10px; background-color: #fff; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);">
+    <h2>Sign Up</h2>
+    <form class="form signup-form">
+      <!-- Username Input -->
+      <div class="form-group">
+        <label for="username-signup">Username:</label>
+        <input class="form-input" type="text" id="username-signup" />
+      </div>
+      <!-- Email Input -->
+      <div class="form-group">
+        <label for="email-signup">Email:</label>
+        <input class="form-input" type="text" id="email-signup" />
+      </div>
+      <!-- Password Input -->
+      <div class="form-group">
+        <label for="password-signup">Password:</label>
+        <input class="form-input" type="password" id="password-signup" />
+      </div>
+      <!-- Signup Button -->
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit" style="padding: 12px 24px; border: none; border-radius: 5px; cursor: pointer; background-color: #000; color: #fff;">Sign Up</button>
+      </div>
+    </form>
+  </div>
 </div>
 
-<!-- Including the Custom JavaScript file for handling login form submission and validation -->
-<script src="/js/login.js"></script>
+<!-- JavaScript -->
+<script src="./js/login.js"></script>

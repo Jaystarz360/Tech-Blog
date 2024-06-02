@@ -1,0 +1,18 @@
+<!-- Blog Section -->
+<section class="card">
+  <h2>{{blogTitle}}</h2>
+  <p>{{blogBody}}</p>
+  <p>Blogged by {{user.username}} on {{format_date createdAt}} at {{format_time createdAt}}.</p>
+  <a href="dash/edit/{{id}}" class="editLink">Edit or delete blog</a>
+</section>
+
+<!-- Comments Section -->
+<section>
+  <h3>Comments</h3>
+  {{#each comments as |comment|}}
+    <div class="comment">
+      <p>{{comment.comBody}}</p>
+      <p>by {{comment.user.username}} on {{format_date comment.createdAt}}</p>
+    </div>
+  {{/each}}
+</section>
